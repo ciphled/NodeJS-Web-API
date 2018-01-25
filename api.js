@@ -1,7 +1,7 @@
 //JSON Data is received via Post request. The data must then be filtered and returned according to the given specifications.
 
-var http = require('http');
-var fs = require('fs');
+const http = require('http');
+const fs = require('fs');
 //use the environment port or if that's not available use port 5000.
 const PORT = process.env.PORT || 5000;
 
@@ -40,9 +40,9 @@ http.createServer(function(req,res){
 	}
 	
 
-}).listen(port); //listen on given port for incoming requests.
+}).listen(PORT); //listen on given port for incoming requests.
 
-console.log(`Server listening on port ${port}`);
+console.log(`Server listening on port ${PORT}`);
 
 
 //Filters input JSON data, 'data'. Sends back the response, 'res', containing the filtered JSON data as text.
