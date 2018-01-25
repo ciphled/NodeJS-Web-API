@@ -35,7 +35,7 @@ http.createServer(function(req,res){
 		//Define an end listener which will return the filtered JSON response once the post request has ended.
 		req.on('end', function(){
 			res.writeHead(200, {'Content-Type':'text/json'});
-			filterJSON(res,JSON.parse(body));
+			filterJSON(res,JSON.parse(body).payload);
 		});
 	}
 	
