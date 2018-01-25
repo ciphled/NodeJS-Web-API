@@ -1,0 +1,6 @@
+{
+	"name":"NodeJS JSON filterer web api",
+	"description":"A NodeJS web-api which receives JSON data post requests, and responds with filtered JSON data.",
+	"repository":"https://github.com/ciphled/NodeJS-Web-API",
+	"keywords":["NODEJS","Web","API","JSON","Filter"]
+}
