@@ -2,7 +2,8 @@
 
 var http = require('http');
 var fs = require('fs');
-var port = 3000;
+//use the environment port or if that's not available use port 5000.
+const PORT = process.env.PORT || 5000;
 
 http.createServer(function(req,res){
 	//check requested method, depending on the request method perform different actions.
