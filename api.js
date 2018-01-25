@@ -8,12 +8,12 @@ const PORT = process.env.PORT || 5000;
 http.createServer(function(req,res){
 	//check requested method, depending on the request method perform different actions.
 	if(req.method ==='GET'){
-		if(req.url.matches(/.html$/)){
+		if(req.url==='/'){
 			//Define the header of response
 			res.writeHead(200, {'Content-Type':'text/html'});
 			//Pipe a file system read stream of the html to the body of the response.
 			fs.createReadStream('./index.html','UTF-8').pipe(res); 
-		}else if(req.url.matches(/.css$/)){
+		}else if(req.url.match(/.css$/)){
 			//Define the header of response
 			res.writeHead(200, {'Content-Type':'text/css'});
 			//Pipe a file system read stream of the html to the body of the response.
