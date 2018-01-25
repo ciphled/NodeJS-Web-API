@@ -34,8 +34,13 @@ http.createServer(function(req,res){
 
 		//Define an end listener which will return the filtered JSON response once the post request has ended.
 		req.on('end', function(){
-			res.writeHead(200, {'Content-Type':'text/json'});
-			filterJSON(res,JSON.parse(body).payload);
+			try{
+				res.writeHead(200, {'Content-Type':'text/json'});
+				filterJSON(res,JSON.parse(body).payload);
+			}catch(e){
+				res.writeHead(400, {'Content-Type':'text/json'});
+				res.end(JSON.stringify({"error": "Could not decode request: JSON parsing failed"}));
+			}
 		});
 	}
 	
@@ -47,12 +52,11 @@ console.log(`Server listening on port ${PORT}`);
 
 //Filters input JSON data, 'data'. Sends back the response, 'res', containing the filtered JSON data as text.
 function filterJSON(res, data){
-				//array has filter function.
 	var filtered = data.filter(function(item){
 		//This is a predicate function called once for every item of the input array. 
 		//If true is returned, then that particular item will be included in the filtered array, otherwise it wont be.
 		return (item.type === 'htv' && item.workflow === 'completed');
 	});
 	//Send back the response with filtered json as the body of the response
-	res.end(JSON.stringify(filtered)); 
+	res.end(JSON.stringify({"Response":filtered})); 
 }
