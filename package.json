@@ -1,0 +1,30 @@
+{
+  "name": "nodejs-web-api",
+  "version": "1.0.0",
+  "description": "A NodeJS web-api which receives JSON data post requests, and responds with filtered JSON data.",
+  "main": "api.js",
+  "dependencies": {
+    "init": "^0.1.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ciphled/NodeJS-Web-API.git"
+  },
+  "keywords": [
+    "NODEJS",
+    "Web",
+    "API",
+    "JSON",
+    "Filter"
+  ],
+  "author": "Winton Nathan-Roberts",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ciphled/NodeJS-Web-API/issues"
+  },
+  "homepage": "https://github.com/ciphled/NodeJS-Web-API#readme"
+}
